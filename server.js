@@ -178,7 +178,7 @@ async function solicitarChatOllama(mensajes, numPredict) {
             think: false,
             keep_alive: KEEP_ALIVE,
             options: {
-                temperature: 0.2,
+                temperature: 0.2,    //Suelo dejarlos en parametros bajos, pero seria entretenido subirle la temperature.
                 top_p: 0.85,
                 top_k: 40,
                 repeat_penalty: 1.15,
@@ -657,7 +657,7 @@ Reglas:
 - No conviertas preguntas, suposiciones o respuestas no verificadas en hechos.
 - Elimina repeticiones y detalles irrelevantes.
 - No inventes información.
-- Escribe en español.
+- Escribe en el idioma que te hablen.
 - Máximo 250 palabras.
 
 Resumen anterior:
