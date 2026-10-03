@@ -46,24 +46,6 @@ internet. Después de instalar todo, `iniciar.bat` puede utilizarse sin conexió
 4. Ejecuta `iniciar.bat`.
 5. Abre `http://127.0.0.1:3000`.
 
-### Cambiar los integrantes del equipo
-
-Edita únicamente `EQUIPO.txt` y escribe los nombres en una sola línea. No modifiques
-`iniciar.bat`, porque es un archivo protegido por la firma de integridad. Los cambios
-en `EQUIPO.txt` no invalidan la aplicación.
-
-## Demostración escolar
-
-1. Inicia la aplicación.
-2. Pulsa **Adjuntar PDF**.
-3. Selecciona un documento.
-4. Prueba preguntas como:
-   - `Resume el documento en cinco puntos.`
-   - `¿Cuál es la idea principal de la página 2?`
-   - `Transcribe literalmente la tabla mostrada.`
-   - `¿Qué conclusión presenta el autor?`
-5. Desconecta internet y repite una consulta para demostrar la ejecución local.
-
 ## Archivos principales
 
 ```text
