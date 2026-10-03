@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "manifestId": "c4e1e219-1e9e-4761-b1eb-8c1e441af0fa",
+  "product": "UCA AI",
+  "version": "B-E 1.03.2",
+  "edition": "Beta-Escolarizada",
+  "attribution": "SRB powered this AI.",
+  "algorithm": "Ed25519 + SHA-256",
+  "files": {
+    "server.js": "d37ee341c44a72ef89a3abd5fa76a22ebee266abee06df9ed4cbc663f59177f1",
+    "package.json": "fc57004d6c3adf333ebedb9cbd54f364cd0fd4ff4bf61f196b3d7f4a27a5ff4e",
+    "package-lock.json": "edad8f4b20b5fd2ffbbccf83b25ece9a42df657349a313d33c469eeaa4f01605",
+    "config/uca_policy.js": "a63cc5f05e41d3faa936385caf360b25887877fe28f86459218aafb0a991db46",
+    "config/attribution.js": "7ab00fa535f16dd02c4fbb575927d5620a4210d30be78df9b1b80dfb56c15dfa",
+    "lib/pdf_documents.js": "1b2f601d5f4032238c7627bbd7961b3fe119c1622fe5f58f5c471d1a54b5c232",
+    "public/index.html": "1b990794009c256f2e0bdd90dac1f88effc6c7b3a98348292f5604959b83a5f0",
+    "public/css/style.css": "0bedec198d1a783775888bea4d447902b745e4ffed0178deafd6445496b1a4cf",
+    "public/js/app.js": "2d3a926949a79df6024ad1eac2c72b6dda95f99dbd0f46479649a56ac0442ea5",
+    "public/logo.svg": "c404e1f43a75c7c9d8f0400f7c02075c006c67c7f233f58b318e1c72d3c1c8c1",
+    "tools/verificar-integridad.js": "8696107147b8d9d48945bac66aaf480bd399bb7545131eb71363fde5d430b236",
+    "iniciar.bat": "50b7060088404e29c37cb635b5399a5c36a4ce96a735e7a2c2a091543534c0b5",
+    "instalar.bat": "7ab32aa1a5baebfc14735d320633133e4a34417988fa9aa551b30ad8254a0094",
+    "instalar-modelo.bat": "a25524b25fe4b5caea4781a4f47da19abd477eb4d9866ac529792a4324cea18a",
+    "instalar-limpio.bat": "eb081a2b61cf0b08030c2c2548238fc4be64f87ccc96627dd2912229fd943756",
+    "actualizar-modelo.bat": "ad1811e51692ceee965365755f7722d13efc50cb58108f6aece046e43cd1f8fa",
+    "verificar-entrega.bat": "c91aae9c74d03b1362363b72bb97bd3a0174b6c29759d2a841d0848aa7b1238a",
+    "README.md": "6c1965142d50608117a561402f63d94156e6f0538ea4deb34bd251910c66cdd0",
+    "GUIA_DE_ENTREGA.md": "3aab81294bf9362da215fc091b8e5f445d99fa436bc3da0ad5cce7b557443f4b",
+    "NOTICE-SRB.txt": "1f0131dbe9f69c45b05439fd28226aff08e5a7bf3f345d05ba2e508a2fc4cabe",
+    "LICENSE-ESCOLAR.md": "e3bfbd40bd6d6a8338f1f328b015e91add7407ad55d7f3c9a3c1befaf431c620",
+    "VERSION.txt": "2633e9555f7791ae3b7b2428a931f0dd117e376cf9104e9ff428d7b7e09ccc3f"
+  }
+}

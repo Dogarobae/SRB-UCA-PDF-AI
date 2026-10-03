@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UCA AI, lector local de documentos PDF basado en Ollama.">
+    <title>UCA AI · Lector local de PDF</title>
+    <link rel="icon" type="image/svg+xml" href="logo.svg?v=BE-1.03.2">
+    <link rel="stylesheet" href="css/style.css?v=BE-1.03.2-layout-p5">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Navegación de conversaciones">
+            <div class="brand-block">
+                <img class="brand-logo" src="logo.svg" alt="Logo UCA AI">
+                <div>
+                    <strong>UCA AI</strong>
+                    <span>Lector local de PDF</span>
+                </div>
+            </div>
+
+            <div class="status-box" aria-live="polite">
+                <span id="statusDot" class="status-dot"></span>
+                <span id="statusText">Verificando Ollama...</span>
+            </div>
+
+            <button id="botonNuevaConversacion" class="new-chat-btn" type="button">
+                + Nueva conversación
+            </button>
+
+            <section class="chat-history" aria-labelledby="historialTitulo">
+                <div class="chat-history-header">
+                    <span id="historialTitulo">Conversaciones</span>
+                    <span id="historyCount" class="history-count">0</span>
+                </div>
+                <div id="listaChats" class="history-list">
+                    <div class="history-empty">Cargando conversaciones...</div>
+                </div>
+            </section>
+
+            <button id="abrirEmpresa" class="about-btn" type="button">
+                Acerca de esta versión
+            </button>
+        </aside>
+
+        <main class="workspace">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Proyecto escolar · funcionamiento local</p>
+                    <h1>Consulta documentos PDF sin enviar datos a internet</h1>
+                </div>
+                <span id="versionAplicacion" class="version-badge" data-app-version>B-E 1.03.2</span>
+            </header>
+
+            <section class="chat-card" aria-label="Conversación con UCA AI">
+                <div id="chatPanel" class="chat-panel" aria-live="polite">
+                    <div class="message system">Cargando conversación...</div>
+                </div>
+
+                <div class="input-area">
+                    <section class="documentos-area" aria-label="Documentos PDF">
+                        <div class="documentos-toolbar">
+                            <input
+                                id="pdfInput"
+                                type="file"
+                                accept="application/pdf,.pdf"
+                                hidden
+                            >
+                            <button id="botonAdjuntarPdf" class="attach-btn" type="button">
+                                Adjuntar PDF
+                            </button>
+                            <button
+                                id="botonDeseleccionarPdf"
+                                class="document-clear-btn"
+                                type="button"
+                                disabled
+                            >
+                                Quitar selección
+                            </button>
+                            <button
+                                id="botonAlternarDocumentos"
+                                class="document-toggle-btn"
+                                type="button"
+                                aria-expanded="true"
+                                hidden
+                            >
+                                Ocultar archivos
+                            </button>
+                            <span id="estadoPdf" class="pdf-status">
+                                Máximo 20 MB. Admite texto, escaneos, tablas y gráficas.
+                            </span>
+                        </div>
+                        <div id="documentosLista" class="documentos-lista"></div>
+                    </section>
+
+                    <label class="sr-only" for="mensaje">Pregunta para UCA AI</label>
+                    <textarea
+                        id="mensaje"
+                        maxlength="8000"
+                        placeholder="Adjunta un PDF y escribe una pregunta sobre su contenido..."
+                    ></textarea>
+
+                    <div class="composer-footer">
+                        <div class="input-meta">
+                            <span>Ctrl + Enter para enviar</span>
+                            <span id="contador">0 / 8000</span>
+                        </div>
+
+                        <div class="buttons">
+                            <button id="botonEnviar" type="button">Enviar pregunta</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="project-footer">
+                <span>Ollama · Qwen3-VL 2B Instruct · ejecución local</span>
+                <strong id="firmaAplicacion" data-attribution>SRB powered this AI.</strong>
+            </footer>
+        </main>
+    </div>
+
+    <div id="modalEmpresa" class="modal" role="dialog" aria-modal="true" aria-labelledby="acercaTitulo">
+        <div class="modal-panel about-panel">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">Información de la entrega</p>
+                    <h2 id="acercaTitulo">UCA AI · B-E 1.03.2</h2>
+                    <p class="version-explanation">B-E - Beta-Escolarizada.</p>
+                </div>
+                <button id="cerrarEmpresa" class="cerrar-modal" type="button">Cerrar</button>
+            </div>
+
+            <div class="about-identity">
+                <img class="about-logo" src="logo.svg" alt="Logo UCA AI">
+                <div>
+                    <h3>Lector local de PDF</h3>
+                    <p>
+                        Procesa documentos en el equipo, recupera fragmentos relevantes
+                        y utiliza un modelo local de Ollama para contestar preguntas.   
+                        Este modelo parte de un trabajo previamente elaborado y trabajado, su modificacion fue hecha
+                        para ser entregado a la Universidad Cuauhthemoc.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <article>
+                    <h3>Operación local</h3>
+                    <p>Las conversaciones y los PDF se almacenan únicamente en la carpeta local <code>data</code>.</p>
+                </article>
+                <article>
+                    <h3>Método documental</h3>
+                    <p>El archivo se extrae, fragmenta e indexa. El modelo no se reentrena con cada PDF.</p>
+                </article>
+                <article>
+                    <h3>Integridad</h3>
+                    <p>Un manifiesto firmado valida los archivos protegidos al iniciar la aplicación.</p>
+                </article>
+                <article>
+                    <h3>Atribución</h3>
+                    <p><strong>SRB powered this AI</strong></p>
+                    <p>Creado por Oliver, Marco, Diego, Juan M</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalConfirmacion" class="modal" role="dialog" aria-modal="true" aria-labelledby="nuevoChatTitulo">
+        <div class="modal-panel confirmacion">
+            <div class="modal-header">
+                <h2 id="nuevoChatTitulo">Nueva conversación</h2>
+            </div>
+            <p class="confirmacion-texto">
+                Se creará un chat vacío. Las conversaciones anteriores permanecerán en el historial local.
+            </p>
+            <div class="confirmacion-alerta">
+                El nuevo chat comienza sin contexto de otros chats ni documentos.
+            </div>
+            <div class="modal-botones">
+                <button id="cancelarNuevaConversacion" class="boton-cancelar" type="button">Cancelar</button>
+                <button id="confirmarNuevaConversacion" class="boton-confirmar" type="button">Crear conversación</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalRenombrar" class="modal" role="dialog" aria-modal="true" aria-labelledby="renombrarTitulo">
+        <div class="modal-panel confirmacion">
+            <div class="modal-header">
+                <h2 id="renombrarTitulo">Renombrar conversación</h2>
+            </div>
+            <p class="confirmacion-texto">Escribe un título para identificar este chat.</p>
+            <input
+                id="inputTituloChat"
+                class="input-modal"
+                type="text"
+                maxlength="80"
+                placeholder="Título de la conversación"
+            >
+            <div class="modal-botones">
+                <button id="cancelarRenombrar" class="boton-cancelar" type="button">Cancelar</button>
+                <button id="confirmarRenombrar" class="boton-confirmar" type="button">Guardar nombre</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalEliminar" class="modal" role="dialog" aria-modal="true" aria-labelledby="eliminarTitulo">
+        <div class="modal-panel confirmacion">
+            <div class="modal-header">
+                <h2 id="eliminarTitulo">Eliminar conversación</h2>
+            </div>
+            <p id="textoEliminar" class="confirmacion-texto">Esta conversación se eliminará permanentemente.</p>
+            <div class="confirmacion-alerta alerta-eliminar">Esta acción no puede deshacerse.</div>
+            <div class="modal-botones">
+                <button id="cancelarEliminar" class="boton-cancelar" type="button">Cancelar</button>
+                <button id="confirmarEliminar" class="boton-eliminar" type="button">Eliminar conversación</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="vendor/marked.umd.js" defer></script>
+    <script src="vendor/purify.min.js" defer></script>
+    <script src="js/app.js?v=BE-1.03.2-p5" defer></script>
+</body>
+</html>

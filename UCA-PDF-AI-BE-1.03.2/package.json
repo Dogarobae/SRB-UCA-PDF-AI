@@ -1,0 +1,32 @@
+{
+  "name": "uca-pdf-ai",
+  "version": "1.3.2-beta-school",
+  "schoolVersion": "B-E 1.03.2",
+  "description": "Lector local de PDF para demostración académica, basado en Ollama y Qwen3-VL 2B Instruct.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "verify": "node tools/verificar-integridad.js",
+    "test": "node --check server.js && node --check config/uca_policy.js && node --check config/attribution.js && node --check lib/pdf_documents.js && node --check public/js/app.js && node tools/verificar-integridad.js"
+  },
+  "keywords": [
+    "ollama",
+    "pdf",
+    "rag",
+    "local-ai",
+    "school-project"
+  ],
+  "author": "Systeme Ressourcen Betrieb (SRB)",
+  "license": "SEE LICENSE-ESCOLAR.md",
+  "type": "commonjs",
+  "dependencies": {
+    "@napi-rs/canvas": "^1.0.2",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "pdfjs-dist": "^6.1.200"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

@@ -1,0 +1,15 @@
+UCA AI — Lector local de PDF
+Versión de entrega: B-E 1.03.2
+
+SRB powered this AI.
+
+Esta versión escolar deriva de una base tecnológica desarrollada previamente por
+Systeme Ressourcen Betrieb (SRB). La atribución anterior debe permanecer visible
+en la interfaz y acompañar cualquier copia, demostración o distribución de esta
+entrega.
+
+La aplicación incorpora un manifiesto firmado y verificación SHA-256 para detectar
+cambios en los archivos protegidos. Como el código fuente se entrega al evaluador,
+ningún mecanismo técnico puede hacer una atribución absolutamente imposible de
+remover; la verificación incluida vuelve la modificación detectable y evita que la
+compilación original arranque cuando los archivos protegidos fueron alterados.

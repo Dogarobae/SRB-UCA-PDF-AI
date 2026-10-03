@@ -1,0 +1,17 @@
+node_modules/
+.env
+
+# Datos locales generados por la aplicación
+data/chats/
+data/documents/
+data/uploads/
+data/backups/
+data/exports/
+
+# Temporales y registros
+*.tmp
+*.log
+
+# La clave privada de la firma nunca debe entrar al proyecto
+*.private.pem
+*.key
