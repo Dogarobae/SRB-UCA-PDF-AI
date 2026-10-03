@@ -5,6 +5,10 @@
 
 `B-E` significa **Beta-Escolarizada**: una rama separada y reducida para la entrega universitaria.
 
+Este proyecto tiene rato que se creo, por lo que de requerir que modifique avisarme para modificarlo.
+
+Fecha de ultima actualizacion del proyecto: 12-07-2026
+
 Esta edición fue separada del proyecto operativo principal y reducida a la función
 solicitada para la actividad escolar: cargar un PDF y contestar preguntas sobre su
 contenido mediante un modelo ejecutado localmente con Ollama.
