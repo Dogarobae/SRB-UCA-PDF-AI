@@ -1,3 +1,4 @@
+/* Este bloque comentado era un metodo para bloquear modificaciones, si desean descargarlo y ustedes agregar el protector SHA eliminar comentario y bloque No comentado.
 "use strict";
 
 const fs = require("fs");
@@ -123,6 +124,32 @@ function verificarIntegridad(baseDir) {
         verifiedAt: new Date().toISOString(),
         manifestId: String(manifest.manifestId || ""),
         protectedFiles: resultados.length
+    });
+}
+
+module.exports = {
+    APP_INFO,
+    verificarIntegridad
+};
+*/
+
+"use strict";
+
+const APP_INFO = Object.freeze({
+    name: "UCA AI",
+    purpose: "Lector local de PDF",
+    version: "B-E 1.03.2",
+    edition: "Beta-Escolarizada",
+    attribution: "SRB powered this AI."
+});
+
+function verificarIntegridad(baseDir) {
+    // Retorna éxito directamente sin verificar firmas ni hashes
+    return Object.freeze({
+        ok: true,
+        verifiedAt: new Date().toISOString(),
+        manifestId: "libre",
+        protectedFiles: 0
     });
 }
 
