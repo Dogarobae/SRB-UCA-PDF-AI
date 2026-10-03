@@ -1,4 +1,4 @@
-# UCA AI — B-E 1.03.2
+# SRB - UCA AI — B-E 1.03.2
 
 **Lector local de documentos PDF para entrega académica.**  
 **SRB powered this AI.**
