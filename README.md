@@ -5,7 +5,7 @@
 
 `B-E` significa **Beta-Escolarizada**: una rama separada y reducida para la entrega universitaria.
 
-Este proyecto tiene rato que se creo, por lo que de requerir que modifique avisarme para modificarlo.
+Este proyecto tiene rato que se creo, por lo que de requerir que modifique algún permiso o algo avisarme para modificarlo.
 
 Fecha de ultima actualizacion del proyecto: 12-07-2026
 
@@ -62,7 +62,7 @@ data/                      Chats y PDF almacenados localmente
 integrity/                 Manifiesto firmado y firma de integridad
 ```
 
-## Atribución e integridad
+## Atribución e integridad (Por ahora anulada en el code config/ attributon.js)
 
 La interfaz muestra la firma **“SRB powered this AI.”** y la aplicación valida al
 arrancar un manifiesto Ed25519 con hashes SHA-256 de los archivos protegidos. La
